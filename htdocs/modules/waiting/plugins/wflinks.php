@@ -10,7 +10,7 @@
 /*************************************************************************/
 function b_waiting_wflinks()
 {
-    $xoopsDB =& Database::getInstance();
+    $xoopsDB = Database::getInstance();
     $ret = array() ;
 
     // wflinks waiting

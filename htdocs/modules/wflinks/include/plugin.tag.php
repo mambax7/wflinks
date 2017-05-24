@@ -39,7 +39,7 @@ function wflinks_tag_iteminfo(&$items)
     }
 
     global $xoopsDB;
-    $myts =& MyTextSanitizer::getInstance();
+    $myts = MyTextSanitizer::getInstance();
 
     $items_id = array();
 
