@@ -161,13 +161,13 @@ $modversion['blocks'][5]['can_clone'] = true ;
 $modversion['hasMain'] = 1;
 
 // This part inserts the selected topics as sub items in the Xoops main menu
-$module_handler = &xoops_gethandler( 'module' );
-$module = &$module_handler -> getByDirname( $modversion['dirname'] );
+$module_handler = xoops_gethandler( 'module' );
+$module = $module_handler -> getByDirname( $modversion['dirname'] );
 $cansubmit = 0;
 if ( is_object( $module ) ) {
     global $xoopsUser;
     $groups = ( is_object( $xoopsUser ) ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
-    $gperm_handler = &xoops_gethandler( 'groupperm' );
+    $gperm_handler = xoops_gethandler( 'groupperm' );
     if ( $gperm_handler -> checkRight( "WFLinkSubPerm", 0, $groups, $module -> getVar( 'mid' ) ) ) {
         $cansubmit = 1;
     }
