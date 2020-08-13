@@ -84,7 +84,6 @@ if ($helper->getConfig('displaySampleButton')) {
     if (1 == $displaySampleButton) {
         xoops_loadLanguage('admin/modulesadmin', 'system');
         require_once dirname(__DIR__) . '/testdata/index.php';
-
         $adminObject->addItemButton(constant('CO_' . $moduleDirNameUpper  . '_' . 'ADD_SAMPLEDATA'), '__DIR__ . /../../testdata/index.php?op=load', 'add');
         $adminObject->addItemButton(constant('CO_' . $moduleDirNameUpper . '_' . 'SAVE_SAMPLEDATA'), '__DIR__ . /../../testdata/index.php?op=save', 'add');
         //    $adminObject->addItemButton(constant('CO_' . $moduleDirNameUpper . '_' . 'EXPORT_SCHEMA'), '__DIR__ . /../../testdata/index.php?op=exportschema', 'add');

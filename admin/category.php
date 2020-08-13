@@ -79,6 +79,7 @@ function createCat($cid = 0)
         $banner_id    = $cat_arr['banner_id'];
         $heading      = _AM_WFL_CCATEGORY_MODIFY;
 
+        /** @var \XoopsGroupPermHandler $grouppermHandler */
         $grouppermHandler = xoops_getHandler('groupperm');
         $groups           = $grouppermHandler->getGroupIds('WFLinkCatPerm', $cid, $xoopsModule->getVar('mid'));
         $groups           = $groups;
@@ -307,6 +308,7 @@ switch ($op) {
             $tags                  = [];
             $tags['CATEGORY_NAME'] = $title;
             $tags['CATEGORY_URL']  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/viewcat.php?cid=' . $newid;
+            /** @var \XoopsNotificationHandler $notificationHandler */
             $notificationHandler   = xoops_getHandler('notification');
             $notificationHandler->triggerEvent('global', 0, 'new_category', $tags);
             $database_mess = _AM_WFL_CCATEGORY_CREATED;

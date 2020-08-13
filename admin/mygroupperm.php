@@ -39,9 +39,11 @@ $module        = $moduleHandler->get($modid);
 if (!is_object($module) || !$module->getVar('isactive')) {
     redirect_header(XOOPS_URL . '/admin.php', 1, _MODULENOEXIST);
 }
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $group_list    = $memberHandler->getGroupList();
 if (is_array($_POST['perms']) && !empty($_POST['perms'])) {
+    /** @var \XoopsGroupPermHandler $grouppermHandler */
     $grouppermHandler = xoops_getHandler('groupperm');
     foreach ($_POST['perms'] as $perm_name => $perm_data) {
         foreach ($perm_data['itemname'] as $item_id => $item_name) {

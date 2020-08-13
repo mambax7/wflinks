@@ -60,6 +60,7 @@ switch (mb_strtolower($op)) {
             }
             if ('forumid' === $key) {
                 $content          = '';
+                /** @var \XoopsModuleHandler $moduleHandler */
                 $moduleHandler    = xoops_getHandler('module');
                 $xoopsforumModule = $moduleHandler->getByDirname('newbb');
                 $sql              = 'SELECT title FROM ' . $xoopsDB->prefix('bb_categories') . ' WHERE cid=' . $content;
@@ -99,6 +100,7 @@ switch (mb_strtolower($op)) {
             }
             if ('forumid' === $key) {
                 $content          = '';
+                /** @var \XoopsModuleHandler $moduleHandler */
                 $moduleHandler    = xoops_getHandler('module');
                 $xoopsforumModule = $moduleHandler->getByDirname('newbb');
                 $sql              = 'SELECT title FROM ' . $xoopsDB->prefix('bb_categories') . ' WHERE cid=' . $content;

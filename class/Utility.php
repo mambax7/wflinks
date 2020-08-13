@@ -83,6 +83,7 @@ class Utility extends Common\SysUtility
         global $xoopsUser, $xoopsModule;
 
         $groups           = \is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+        /** @var \XoopsGroupPermHandler $grouppermHandler */
         $grouppermHandler = \xoops_getHandler('groupperm');
         if (!$grouppermHandler->checkRight($permType, $cid, $groups, $xoopsModule->getVar('mid'))) {
             if (false === $redirect) {
@@ -1499,6 +1500,7 @@ class Utility extends Common\SysUtility
     {
         static $wfl_tag_module_included;
         if (!isset($wfl_tag_module_included)) {
+            /** @var \XoopsModuleHandler $moduleHandler */
             $modulesHandler = \xoops_getHandler('module');
             $tag_mod        = $modulesHandler->getByDirname('tag');
             if ($tag_mod) {

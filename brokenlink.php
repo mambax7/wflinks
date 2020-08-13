@@ -47,6 +47,7 @@ switch (mb_strtolower($op)) {
             // Send notifications
             $tags                      = [];
             $tags['BROKENREPORTS_URL'] = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/admin/main.php?op=listBrokenlinks';
+            /** @var \XoopsNotificationHandler $notificationHandler */
             $notificationHandler       = xoops_getHandler('notification');
             $notificationHandler->triggerEvent('global', 0, 'link_broken', $tags);
 
@@ -55,6 +56,7 @@ switch (mb_strtolower($op)) {
             $link_arr = $xoopsDB->fetchArray($xoopsDB->query($sql));
             unset($sql);
 
+            /** @var \XoopsMemberHandler $memberHandler */
             $memberHandler = xoops_getHandler('member');
             $submit_user   = $memberHandler->getUser($link_arr['submitter']);
             if (is_object($submit_user) && !empty($submit_user)) {

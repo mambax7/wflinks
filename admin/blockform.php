@@ -63,7 +63,7 @@ if ($block['is_custom']) {
     $form->addElement($ctype_select);
 } else {
     if ('' !== $block['template']) {
-        /** @var XoopsTplfileHandler $tplfileHandler */
+        /** @var \XoopsTplfileHandler $tplfileHandler */
         $tplfileHandler = xoops_getHandler('tplfile');
         /** @var \XoopsTplfile[] $btemplate */
         $btemplate = $tplfileHandler->find($GLOBALS['xoopsConfig']['template_set'], 'block', $block['bid']);

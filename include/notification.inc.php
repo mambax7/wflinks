@@ -23,6 +23,7 @@ function wflinks_notify_iteminfo($category, $item_id)
         /** @var \XoopsModuleHandler $moduleHandler */
         $moduleHandler = xoops_getHandler('module');
         $module        = $moduleHandler->getByDirname($moduleDirName);
+        /* @var \XoopsConfigHandler $configHandler */
         $configHandler = xoops_getHandler('config');
         $config        = $configHandler->getConfigsByCat(0, $module->getVar('mid'));
     } else {

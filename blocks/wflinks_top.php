@@ -73,6 +73,7 @@ function b_wflinks_top_show($options)
     $time            = time();
     $moduleHandler   = xoops_getHandler('module');
     $wflModule       = $moduleHandler->getByDirname($moduleDirName);
+    /* @var \XoopsConfigHandler $configHandler */
     $configHandler   = xoops_getHandler('config');
     $wflModuleConfig = $configHandler->getConfigsByCat(0, $wflModule->getVar('mid'));
     $myts          = MyTextSanitizer:: getInstance();

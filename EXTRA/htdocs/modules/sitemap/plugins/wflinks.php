@@ -22,13 +22,16 @@ function b_sitemap_wflinks()
     require_once XOOPS_ROOT_PATH . '/class/xoopstree.php';
     $mytree = new \XoopsTree($xoopsDB->prefix('wflinks_cat'), 'cid', 'pid');
 
+    /** @var \XoopsModuleHandler $moduleHandler */
     $MyModule     = xoops_getHandler('module');
     $wflinkModule = $MyModule->getByDirname('wflinks');
 
+    /* @var \XoopsConfigHandler $configHandler */
     $MyConfig     = xoops_getHandler('config');
     $wflinkConfig = $MyConfig->getConfigsByCat(0, $wflinkModule->getVar('mid'));
 
     $groups           = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+    /** @var \XoopsGroupPermHandler $grouppermHandler */
     $grouppermHandler = xoops_getHandler('groupperm');
 
     $sitemap = [];

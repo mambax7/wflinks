@@ -20,6 +20,7 @@ function b_wflinks_banner_show($options)
 
     $block         = [];
     $time          = time();
+    /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $wflModule     = $moduleHandler->getByDirname($moduleDirName);
 

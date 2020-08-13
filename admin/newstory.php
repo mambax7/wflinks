@@ -39,6 +39,7 @@ $notificationHandler = xoops_getHandler('notification');
 
 $tags               = [];
 $tags['STORY_NAME'] = $story->title();
+/** @var \XoopsModuleHandler $moduleHandler */
 $moduleHandler      = xoops_getHandler('module');
 $newsModule         = $moduleHandler->getByDirname('news');
 $tags['STORY_URL']  = XOOPS_URL . '/modules/news/article.php?storyid=' . $story->storyid();

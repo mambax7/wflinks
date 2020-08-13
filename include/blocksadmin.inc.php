@@ -250,6 +250,7 @@ if ('delete_ok' === $op) {
     }
     $myblock->delete();
     if (!defined('XOOPS_ORETEKI') && '' !== $myblock->getVar('template')) {
+        /** @var \XoopsTplfileHandler $tplfileHandler */
         $tplfileHandler = xoops_getHandler('tplfile');
         $btemplate      = $tplfileHandler->find($GLOBALS['xoopsConfig']['template_set'], 'block', $bid);
         if (count($btemplate) > 0) {
