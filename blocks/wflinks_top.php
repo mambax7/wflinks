@@ -84,7 +84,7 @@ function b_wflinks_top_show($options)
             continue;
         }
         $linkload = [];
-        $title    = htmlspecialchars($myrow['title']);
+        $title    = htmlspecialchars($myrow['title'], ENT_QUOTES | ENT_HTML5);
         if (!XOOPS_USE_MULTIBYTES) {
             if (mb_strlen($myrow['title']) >= $options[2]) {
                 $title = mb_substr($myrow['title'], 0, $options[2] - 1) . '...';

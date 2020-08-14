@@ -62,7 +62,7 @@ switch (mb_strtolower($op)) {
             if (is_object($submit_user) && !empty($submit_user)) {
                 $subdate = formatTimestamp($link_arr['date'], $helper->getConfig('dateformat'));
                 $cid     = $link_arr['cid'];
-                $title   = htmlspecialchars($link_arr['title']);
+                $title   = htmlspecialchars($link_arr['title'], ENT_QUOTES | ENT_HTML5);
                 $subject = _MD_WFL_BROKENREPORTED;
 
                 $xoopsMailer = xoops_getMailer();
@@ -108,7 +108,7 @@ switch (mb_strtolower($op)) {
         $broke_arr = $xoopsDB->fetchArray($xoopsDB->query($sql));
 
         if (is_array($broke_arr)) {
-            $broken['title']        = htmlspecialchars($link_arr['title']);
+            $broken['title']        = htmlspecialchars($link_arr['title'], ENT_QUOTES | ENT_HTML5);
             $broken['id']           = $broke_arr['reportid'];
             $broken['reporter']     = \XoopsUserUtility::getUnameFromId($broke_arr['sender']);
             $broken['date']         = formatTimestamp($broke_arr['date'], $helper->getConfig('dateformat'));
@@ -122,7 +122,7 @@ switch (mb_strtolower($op)) {
             }
 
             // file info
-            $link['title']     = htmlspecialchars($link_arr['title']);
+            $link['title']     = htmlspecialchars($link_arr['title'], ENT_QUOTES | ENT_HTML5);
             $time              = ($link_arr['published'] > 0) ? $link_arr['published'] : $link_arr['updated'];
             $link['updated']   = formatTimestamp($time, $helper->getConfig('dateformat'));
             $is_updated        = (0 != $link_arr['updated']) ? _MD_WFL_UPDATEDON : _MD_WFL_SUBMITDATE;
