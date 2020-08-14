@@ -63,6 +63,7 @@ if ('message' === $action) {
         $mylinks_version = round($mylinks->getVar('version') / 100, 2);
     }
 
+    /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $weblinks      = $moduleHandler->getByDirname('weblinks');
     if ($weblinks) {

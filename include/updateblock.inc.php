@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Keep Block option values when update (by nobunobu)
 global $xoopsDB;
 $query  = 'SELECT mid FROM ' . $xoopsDB->prefix('modules') . " WHERE dirname='" . $modversion['dirname'] . "' ";

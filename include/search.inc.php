@@ -17,7 +17,7 @@ function checkSearchgroups($cid = 0, $permType = 'WFLinkCatPerm', $redirect = fa
     $moduleDirName = basename(__DIR__);
     global $xoopsUser;
 
-    $groups           = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+    $groups = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
     /** @var \XoopsGroupPermHandler $grouppermHandler */
     $grouppermHandler = xoops_getHandler('groupperm');
 

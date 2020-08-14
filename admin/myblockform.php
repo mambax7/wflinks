@@ -17,8 +17,6 @@
  * @author         XOOPS Development Team
  */
 
-
-
 require_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 $form = new \XoopsThemeForm($block['form_title'], 'blockform', 'admin.php');
 if (isset($block['name'])) {

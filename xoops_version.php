@@ -44,7 +44,7 @@ $modversion = [
     'release_file'           => XOOPS_URL . '/modules/' . $moduleDirName . '/docs/changelog.txt',
     'module_website_url'     => 'www.xoops.org/',
     'module_website_name'    => 'XOOPS',
-    'min_php'                =>  '7.2',
+    'min_php'                => '7.2',
     'min_xoops'              => '2.5.10',
     'min_admin'              => '1.2',
     'min_db'                 => ['mysql' => '5.5'],
@@ -171,7 +171,7 @@ $module        = $moduleHandler->getByDirname($modversion['dirname']);
 $cansubmit     = 0;
 if (is_object($module)) {
     global $xoopsUser;
-    $groups           = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+    $groups = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
     /** @var \XoopsGroupPermHandler $grouppermHandler */
     $grouppermHandler = xoops_getHandler('groupperm');
     if ($grouppermHandler->checkRight('WFLinkSubPerm', 0, $groups, $module->getVar('mid'))) {

@@ -59,7 +59,7 @@ switch (mb_strtolower($op)) {
                 $content = $row['title'];
             }
             if ('forumid' === $key) {
-                $content          = '';
+                $content = '';
                 /** @var \XoopsModuleHandler $moduleHandler */
                 $moduleHandler    = xoops_getHandler('module');
                 $xoopsforumModule = $moduleHandler->getByDirname('newbb');
@@ -99,7 +99,7 @@ switch (mb_strtolower($op)) {
                 $content = $row['title'];
             }
             if ('forumid' === $key) {
-                $content          = '';
+                $content = '';
                 /** @var \XoopsModuleHandler $moduleHandler */
                 $moduleHandler    = xoops_getHandler('module');
                 $xoopsforumModule = $moduleHandler->getByDirname('newbb');

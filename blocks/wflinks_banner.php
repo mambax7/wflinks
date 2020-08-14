@@ -6,8 +6,6 @@
  * @param mixed $options
  */
 
-
-
 /**
  * @param $options
  *
@@ -18,8 +16,8 @@ function b_wflinks_banner_show($options)
     $moduleDirName = basename(__DIR__);
     global $xoopsDB;
 
-    $block         = [];
-    $time          = time();
+    $block = [];
+    $time  = time();
     /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $wflModule     = $moduleHandler->getByDirname($moduleDirName);

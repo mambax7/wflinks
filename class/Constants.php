@@ -17,7 +17,7 @@ namespace XoopsModules\Wflinks;
  * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package
  * @since
- * @author     XOOPS Development Team
+ * @author       XOOPS Development Team
  */
 
 //defined('XOOPS_ROOT_PATH') || die('Restricted access');
@@ -32,7 +32,6 @@ final class Constants
      */
 
     const DISALLOW = 0;
-
     /**
      * no delay XOOPS redirect delay (in seconds)
      */
@@ -49,6 +48,5 @@ final class Constants
      * long XOOPS redirect delay (in seconds)
      */
     const REDIRECT_DELAY_LONG = 7;
-
     /**#@-*/
 }

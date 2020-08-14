@@ -31,8 +31,8 @@ $adminObject = Admin::getInstance();
 $feedback = new ModuleFeedback();
 
 // It recovered the value of argument op in URL$
-$op            = Request::getString('op', 'list');
-$moduleDirName = $GLOBALS['xoopsModule']->getVar('dirname');
+$op                 = Request::getString('op', 'list');
+$moduleDirName      = $GLOBALS['xoopsModule']->getVar('dirname');
 $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 xoops_loadLanguage('feedback', $moduleDirName);
 

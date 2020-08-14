@@ -10,8 +10,6 @@
  * @param mixed $items
  */
 
-
-
 /**
  * Get item fields:
  * title

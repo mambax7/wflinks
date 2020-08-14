@@ -309,7 +309,7 @@ switch ($op) {
             $tags['CATEGORY_NAME'] = $title;
             $tags['CATEGORY_URL']  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/viewcat.php?cid=' . $newid;
             /** @var \XoopsNotificationHandler $notificationHandler */
-            $notificationHandler   = xoops_getHandler('notification');
+            $notificationHandler = xoops_getHandler('notification');
             $notificationHandler->triggerEvent('global', 0, 'new_category', $tags);
             $database_mess = _AM_WFL_CCATEGORY_CREATED;
         }

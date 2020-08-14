@@ -20,6 +20,7 @@ use Xmf\Module\Admin;
 use XoopsModules\Wflinks\{
     Helper
 };
+
 /** @var Admin $adminObject */
 /** @var Helper $helper */
 
@@ -28,7 +29,7 @@ require dirname(__DIR__) . '/preloads/autoloader.php';
 require dirname(__DIR__, 3) . '/include/cp_header.php';
 require_once dirname(__DIR__) . '/include/common.php';
 
-$moduleDirName = basename(dirname(__DIR__));
+$moduleDirName      = basename(dirname(__DIR__));
 $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 /** @var Helper $helper */
 $helper = Helper::getInstance();
@@ -59,7 +60,7 @@ require_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 //$myts =\TextSanitizer::getInstance(); // MyTextSanitizer object
 
-$pathIcon16      = Xmf\Module\Admin::iconUrl('', 16);
+$pathIcon16 = Xmf\Module\Admin::iconUrl('', 16);
 
 $imageArray = [
     'editimg'     => "<img src='$pathIcon16/edit.png' alt='" . _AM_WFL_ICO_EDIT . "' align='middle'>",

@@ -30,23 +30,19 @@ class ThumbsNails
     public $_img_name     = 'blank.gif';
     public $_img_path     = 'uploads';
     public $_img_savepath = 'thumbs';
-
     public $_source_path  = '';
     public $_save_path    = '';
     public $_source_url   = '';
     public $_source_image = '';
     public $_save_image   = '';
-
     public $_usethumbs       = 0;
     public $_image_type      = 'gd2';
     public $_return_fullpath = 0;
-
     public $img_width   = 100;
     public $img_height  = 100;
     public $img_quality = 100;
     public $img_update  = 1;
     public $img_aspect  = 1;
-
     /**
      * @access private
      */

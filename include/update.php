@@ -5,8 +5,6 @@
  * Licence: GNU
  */
 
-
-
 global $xoopsDB;
 
 $i = 0;

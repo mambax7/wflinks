@@ -30,7 +30,7 @@ function b_sitemap_wflinks()
     $MyConfig     = xoops_getHandler('config');
     $wflinkConfig = $MyConfig->getConfigsByCat(0, $wflinkModule->getVar('mid'));
 
-    $groups           = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+    $groups = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
     /** @var \XoopsGroupPermHandler $grouppermHandler */
     $grouppermHandler = xoops_getHandler('groupperm');
 

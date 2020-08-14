@@ -48,7 +48,7 @@ switch (mb_strtolower($op)) {
             $tags                      = [];
             $tags['BROKENREPORTS_URL'] = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/admin/main.php?op=listBrokenlinks';
             /** @var \XoopsNotificationHandler $notificationHandler */
-            $notificationHandler       = xoops_getHandler('notification');
+            $notificationHandler = xoops_getHandler('notification');
             $notificationHandler->triggerEvent('global', 0, 'link_broken', $tags);
 
             // Send email to the owner of the linkload stating that it is broken

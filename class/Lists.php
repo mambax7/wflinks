@@ -197,6 +197,9 @@ class Lists
         return $noforum;
     }
 
+    /**
+     * @return null
+     */
     public function getValue()
     {
         return $this->value;

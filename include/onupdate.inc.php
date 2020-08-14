@@ -1,7 +1,5 @@
 <?php
 
-
-
 // referer check
 $ref = xoops_getenv('HTTP_REFERER');
 if ('' === $ref || 0 === mb_strpos($ref, XOOPS_URL . '/modules/system/admin.php')) {

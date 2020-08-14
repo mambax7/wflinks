@@ -77,10 +77,10 @@ trait FilesManagement
      *
      * @param string $src source directory to delete
      *
-     * @uses \Xmf\Module\Helper::isUserAdmin()
+     * @return bool true on success
      * @uses \Xmf\Module\Helper::getHelper()
      *
-     * @return bool true on success
+     * @uses \Xmf\Module\Helper::isUserAdmin()
      */
     public static function deleteDirectory($src)
     {
@@ -103,8 +103,8 @@ trait FilesManagement
                         break;
                     }
                 } elseif (!($success = \unlink($fileInfo->getRealPath()))) {
-                        break;
-                    }
+                    break;
+                }
             }
             // now delete this (sub)directory if all the files are gone
             if ($success) {
