@@ -21,8 +21,8 @@ $helper = Wflinks\Helper::getInstance();
 $mytree = new Wflinks\Tree($xoopsDB->prefix('wflinks_cat'), 'cid', 'pid');
 global $myts;
 
-$cid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'cid', 0);
-$lid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$cid = \Xmf\Request::getInt('cid', 0);
+$lid = \Xmf\Request::getInt('lid', 0);
 $cid = (int)$cid;
 $lid = (int)$lid;
 
@@ -31,16 +31,16 @@ if (false === Wflinks\Utility::checkGroups($cid, 'WFLinkSubPerm')) {
 }
 
 if (true === Wflinks\Utility::checkGroups($cid, 'WFLinkSubPerm')) {
-    if (Wflinks\Utility::cleanRequestVars($_REQUEST, 'submit', 0)) {
+    if (\Xmf\Request::getInt('submit', 0)) {
         if (false === Wflinks\Utility::checkGroups($cid, 'WFLinkSubPerm')) {
             redirect_header('index.php', 1, _MD_WFL_NOPERMISSIONTOPOST);
         }
 
         $submitter    = (is_object($xoopsUser) && !empty($xoopsUser)) ? $xoopsUser->getVar('uid') : 0;
-        $forumid      = Wflinks\Utility::cleanRequestVars($_REQUEST, 'forumid', 0);
-        $offline      = Wflinks\Utility::cleanRequestVars($_REQUEST, 'offline', 0);
-        $notifypub    = Wflinks\Utility::cleanRequestVars($_REQUEST, 'notifypub', 0);
-        $approve      = Wflinks\Utility::cleanRequestVars($_REQUEST, 'approve', 0);
+        $forumid      = \Xmf\Request::getInt('forumid', 0);
+        $offline      = \Xmf\Request::getInt('offline', 0);
+        $notifypub    = \Xmf\Request::getInt('notifypub', 0);
+        $approve      = \Xmf\Request::getInt('approve', 0);
         $url          = $myts->addSlashes(ltrim($_POST['url']));
         $title        = $myts->addSlashes(ltrim($_REQUEST['title']));
         $descriptionb = $myts->addSlashes(ltrim($_REQUEST['descriptionb']));
@@ -167,7 +167,7 @@ if (true === Wflinks\Utility::checkGroups($cid, 'WFLinkSubPerm')) {
                 $modifysubmitter = $xoopsUser->uid();
                 $requestid       = $modifysubmitter;
                 $requestdate     = time();
-                $updated         = Wflinks\Utility::cleanRequestVars($_REQUEST, 'up_dated', time());
+                $updated         = \Xmf\Request::getInt('up_dated', time());
                 $sql             = 'INSERT INTO '
                                    . $xoopsDB->prefix('wflinks_mod')
                                    . ' (requestid, lid, cid, title, url, forumid, description, modifysubmitter, requestdate, country, keywords, item_tag, googlemap, yahoomap, multimap, street1, street2, town, state, zip, tel, fax, voip, mobile, email, vat)';
@@ -199,7 +199,7 @@ if (true === Wflinks\Utility::checkGroups($cid, 'WFLinkSubPerm')) {
         /** @var Wflinks\Helper $helper */
         $helper = Wflinks\Helper::getInstance();
 
-        $approve = Wflinks\Utility::cleanRequestVars($_REQUEST, 'approve', 0);
+        $approve = \Xmf\Request::getInt('approve', 0);
 
         //Show disclaimer
         if (!isset($_GET['agree']) && $helper->getConfig('showdisclaimer') && 0 == $approve) {

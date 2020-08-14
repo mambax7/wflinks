@@ -18,8 +18,8 @@ $helper = Wflinks\Helper::getInstance();
 
 global $mytree;
 xoops_load('XoopsUserUtility');
-$op        = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$requestid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'requestid', 0);
+$op        = \Xmf\Request::getString('op', '');
+$requestid = \Xmf\Request::getInt('requestid', 0);
 
 switch (mb_strtolower($op)) {
     case 'listmodreqshow':

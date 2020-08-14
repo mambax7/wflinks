@@ -15,9 +15,9 @@ require_once __DIR__ . '/header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$agreed = Wflinks\Utility::cleanRequestVars($_REQUEST, 'agree', 0);
-$cid    = Wflinks\Utility::cleanRequestVars($_REQUEST, 'cid', 0);
-$lid    = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$agreed = \Xmf\Request::getInt('agree', 0);
+$cid    = \Xmf\Request::getInt('cid', 0);
+$lid    = \Xmf\Request::getInt('lid', 0);
 $cid    = (int)$cid;
 $lid    = (int)$lid;
 $agreed = (int)$agreed;

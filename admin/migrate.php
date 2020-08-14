@@ -30,8 +30,7 @@
 // ------------------------------------------------------------------------- //
 
 use Xmf\Request;
-use XoopsModules\Wflinks\{
-    Common\Configurator,
+use XoopsModules\Wflinks\{Common\Configurator,
     Common\Migrate,
     Helper
 };

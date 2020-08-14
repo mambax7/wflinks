@@ -15,8 +15,8 @@ require_once __DIR__ . '/admin_header.php';
 
 global $xoopsModuleConfig;
 
-$op  = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$lid = (int)Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$op  = \Xmf\Request::getString('op', '');
+$lid = \Xmf\Request::getInt('lid', 0);
 
 /**
  * @param Wflinks\Tree $xt

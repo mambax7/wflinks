@@ -14,7 +14,7 @@ $moduleDirName = basename(__DIR__);
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$lid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$lid = \Xmf\Request::getInt('lid', 0);
 $lid = (int)$lid;
 
 $error_message = _MD_WFL_NOITEMSELECTED;

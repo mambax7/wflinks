@@ -17,13 +17,13 @@ $helper = Wflinks\Helper::getInstance();
 
 global $imageArray, $xoopsModule;
 
-$op  = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$lid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$op  = \Xmf\Request::getString('op', '');
+$lid = \Xmf\Request::getInt('lid', 0);
 
 switch (mb_strtolower($op)) {
     case 'updateNotice':
-        $ack = Wflinks\Utility::cleanRequestVars($_REQUEST, 'ack', 0);
-        $con = Wflinks\Utility::cleanRequestVars($_REQUEST, 'con', 1);
+        $ack = \Xmf\Request::getInt('ack', 0);
+        $con = \Xmf\Request::getInt('con', 1);
 
         if ($ack && !$con) {
             $acknowledged = (0 == $ack) ? 1 : 0;

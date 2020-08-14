@@ -8,8 +8,7 @@
  * Licence: GNU
  */
 
-use XoopsModules\Wflinks\{
-    Helper
+use XoopsModules\Wflinks\{Helper
 };
 
 require dirname(__DIR__, 2) . '/mainfile.php';

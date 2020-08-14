@@ -16,8 +16,7 @@
 
 use Xmf\Database\TableLoad;
 use Xmf\Request;
-use XoopsModules\Wflinks\{
-    Helper,
+use XoopsModules\Wflinks\{Helper,
     Common,
     Utility
 };

@@ -154,61 +154,6 @@ class Utility extends Common\SysUtility
     }
 
     /**
-     * @param      $array
-     * @param null $name
-     * @param null $def
-     * @param bool $strict
-     * @param int  $lengthcheck
-     *
-     * @return array|int|mixed|null|string
-     */
-    public static function cleanRequestVars($array, $name = null, $def = null, $strict = false, $lengthcheck = 15)
-    {
-        // Sanitise $_request for further use.  This method gives more control and security.
-        // Method is more for functionality rather than beauty at the moment, will correct later.
-        unset($array['usercookie'], $array['PHPSESSID']);
-
-        if (\is_array($array) && null === $name) {
-            $globals = [];
-            foreach (\array_keys($array) as $k) {
-                $value = \strip_tags(\trim($array[$k]));
-                if ('' !== $value >= $lengthcheck) {
-                    return null;
-                }
-                if (ctype_digit($value)) {
-                    $value = (int)$value;
-                } else {
-                    if (true === $strict) {
-                        $value = \preg_replace('/\W/', '', \trim($value));
-                    }
-                    $value = mb_strtolower((string)$value);
-                }
-                $globals[$k] = $value;
-            }
-
-            return $globals;
-        }
-        if (!\array_key_exists($name, $array) || !isset($array[$name])) {
-            return $def;
-        }
-
-        $value = \strip_tags(\trim($array[$name]));
-        if (ctype_digit($value)) {
-            $value = (int)$value;
-        } else {
-            if (true === $strict) {
-                $value = \preg_replace('/\W/', '', \trim($value));
-            }
-            $value = mb_strtolower((string)$value);
-        }
-
-        return $value;
-    }
-
-    // toolbar()
-    // @return
-
-    /**
      * @param int $cid
      *
      * @return string
@@ -930,13 +875,13 @@ class Utility extends Common\SysUtility
                 if ($x22) {
                     $editor = new \XoopsFormEditor($caption, 'dhtmlext', $editor_configs);
                 } elseif (\is_readable(XOOPS_ROOT_PATH . '/class/xoopseditor/dhtmlext/dhtmlext.php')) {
-                        require_once XOOPS_ROOT_PATH . '/class/xoopseditor/dhtmlext/dhtmlext.php';
-                        $editor = new \XoopsFormDhtmlTextAreaExtended($caption, $name, $value, 10, 50);
-                    } elseif ($dhtml) {
-                        $editor = new \XoopsFormDhtmlTextArea($caption, $name, $value, 50, 60);
-                    } else {
-                        $editor = new \XoopsFormTextArea($caption, $name, $value, 7, 60);
-                    }
+                    require_once XOOPS_ROOT_PATH . '/class/xoopseditor/dhtmlext/dhtmlext.php';
+                    $editor = new \XoopsFormDhtmlTextAreaExtended($caption, $name, $value, 10, 50);
+                } elseif ($dhtml) {
+                    $editor = new \XoopsFormDhtmlTextArea($caption, $name, $value, 50, 60);
+                } else {
+                    $editor = new \XoopsFormTextArea($caption, $name, $value, 7, 60);
+                }
 
                 break;
             case 'tinymce':

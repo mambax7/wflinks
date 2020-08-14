@@ -340,7 +340,7 @@ class VCard
 
 require_once __DIR__ . '/header.php';
 
-$lid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$lid = \Xmf\Request::getInt('lid', 0);
 $lid = (int)$lid;
 
 global $xoopsDB;

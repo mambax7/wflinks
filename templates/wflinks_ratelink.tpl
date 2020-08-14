@@ -40,8 +40,8 @@
                 </select>&nbsp;&nbsp;
                 <input type="submit" name="submit" value="<{$smarty.const._MD_WFL_RATEIT}>"
                        alt="<{$smarty.const._MD_WFL_RATEIT}>"> <input type="button" value="<{$smarty.const._CANCEL}>"
-                                                                       alt="<{$smarty.const._CANCEL}>"
-                                                                       onclick="location='<{$xoops_url}>/modules/<{$module_dir}>/singlelink.php?cid=<{$link.cid}>&amp;lid=<{$link.id}>'">
+                                                                      alt="<{$smarty.const._CANCEL}>"
+                                                                      onclick="location='<{$xoops_url}>/modules/<{$module_dir}>/singlelink.php?cid=<{$link.cid}>&amp;lid=<{$link.id}>'">
             </form>
         </td>
     </tr>

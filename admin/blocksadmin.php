@@ -14,8 +14,7 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Wflinks\{
-    Helper
+use XoopsModules\Wflinks\{Helper
 };
 
 /** @var Helper $helper */
@@ -95,7 +94,9 @@ if ($GLOBALS['xoopsUser']->isAdmin($xoopsModule->mid())) {
              . '-'
              . _RIGHT
              . "</th><th align='center'>"
-             . constant('CO_' . $moduleDirNameUpper . '_' . 'WEIGHT')
+             . constant(
+                 'CO_' . $moduleDirNameUpper . '_' . 'WEIGHT'
+             )
              . "</th><th align='center'>"
              . constant('CO_' . $moduleDirNameUpper . '_' . 'VISIBLE')
              . "</th><th align='center'>"

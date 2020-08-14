@@ -113,7 +113,8 @@
                         <{/if}>
                         <br>
                         <div>
-                            &nbsp;</div> <{if $wfllink.autoscrshot == 0}> <{if $show_screenshot === true}> <{if $wfllink.screenshot_full != ''}>
+                            &nbsp;
+                        </div> <{if $wfllink.autoscrshot == 0}> <{if $show_screenshot === true}> <{if $wfllink.screenshot_full != ''}>
                             <div>
                                 <div align="center"><a href="<{$xoops_url}>/<{$shots_dir}>/<{$wfllink.screenshot_full}>"
                                                        target="_blank"><img src="<{$wfllink.screenshot_thumb}>" alt=""

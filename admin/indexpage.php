@@ -15,8 +15,8 @@ require_once __DIR__ . '/admin_header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$op  = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$cid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'cid', 0);
+$op  = \Xmf\Request::getString('op', '');
+$cid = \Xmf\Request::getInt('cid', 0);
 
 switch (mb_strtolower($op)) {
     case 'save':

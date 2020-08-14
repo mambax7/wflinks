@@ -68,8 +68,7 @@ function xoops_module_update_wflinks(\XoopsModule $module, $previousVersion = nu
     $moduleDirName      = basename(dirname(__DIR__));
     $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
-    /** @var Wflinks\Helper $helper */ 
-    /** @var Wflinks\Utility $utility */
+    /** @var Wflinks\Helper $helper */ /** @var Wflinks\Utility $utility */
     /** @var Wflinks\Common\Configurator $configurator */
     $helper       = Wflinks\Helper::getInstance();
     $utility      = new Wflinks\Utility();

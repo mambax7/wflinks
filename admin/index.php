@@ -18,11 +18,11 @@ $adminObject = Admin::getInstance();
 
 global $xoopsDB;
 
-$start     = Utility::cleanRequestVars($_REQUEST, 'start', 0);
-$start1    = Utility::cleanRequestVars($_REQUEST, 'start1', 0);
-$start2    = Utility::cleanRequestVars($_REQUEST, 'start2', 0);
-$start3    = Utility::cleanRequestVars($_REQUEST, 'start3', 0);
-$start4    = Utility::cleanRequestVars($_REQUEST, 'start4', 0);
+$start     = \Xmf\Request::getInt('start', 0);
+$start1    = \Xmf\Request::getInt('start1', 0);
+$start2    = \Xmf\Request::getInt('start2', 0);
+$start3    = \Xmf\Request::getInt('start3', 0);
+$start4    = \Xmf\Request::getInt('start4', 0);
 $totalcats = Utility::getTotalCategory();
 
 $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_broken'));

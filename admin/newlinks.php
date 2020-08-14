@@ -15,9 +15,9 @@ require_once __DIR__ . '/admin_header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$op        = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$lid       = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', '');
-$requestid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'requestid', 0);
+$op        = \Xmf\Request::getString('op', '');
+$lid       = \Xmf\Request::getInt('lid', 0);
+$requestid = \Xmf\Request::getInt('requestid', 0);
 
 switch (mb_strtolower($op)) {
     case 'approve':
@@ -63,7 +63,7 @@ switch (mb_strtolower($op)) {
     default:
 
         xoops_load('XoopsUserUtility');
-        $start = Wflinks\Utility::cleanRequestVars($_REQUEST, 'start', 0);
+        $start = \Xmf\Request::getInt('start', 0);
         $sql   = 'SELECT * FROM ' . $xoopsDB->prefix('wflinks_links') . ' WHERE published = 0 ORDER BY lid DESC';
         if (!$result = $xoopsDB->query($sql)) {
             $logger->handleError(E_USER_WARNING, $sql, __FILE__, __LINE__);

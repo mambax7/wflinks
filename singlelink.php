@@ -16,8 +16,8 @@ require_once __DIR__ . '/header.php';
 $helper = Wflinks\Helper::getInstance();
 global $xoopsTpl, $xoTheme;
 
-$lid = (int)Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
-$cid = (int)Wflinks\Utility::cleanRequestVars($_REQUEST, 'cid', 0);
+$lid = \Xmf\Request::getInt('lid', 0);
+$cid = \Xmf\Request::getInt('cid', 0);
 
 $sql2 = 'SELECT count(*) FROM '
         . $xoopsDB->prefix('wflinks_links')

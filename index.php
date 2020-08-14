@@ -15,7 +15,7 @@ require_once __DIR__ . '/header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$start = Wflinks\Utility::cleanRequestVars($_REQUEST, 'start', 0);
+$start = \Xmf\Request::getInt('start', 0);
 $start = (int)$start;
 
 $GLOBALS['xoopsOption']['template_main'] = 'wflinks_index.tpl';
@@ -103,7 +103,8 @@ while (false !== ($myrow = $xoopsDB->fetchArray($result))) {
         }
         // End
 
-        $xoopsTpl->append('categories',
+        $xoopsTpl->append(
+            'categories',
             [
                 'image'         => XOOPS_URL . "/$imgurl",
                 'id'            => $myrow['cid'],
@@ -143,11 +144,15 @@ $sql       = $xoopsDB->query('SELECT lastlinksyn, lastlinkstotal FROM ' . $xoops
 $lastlinks = $xoopsDB->fetchArray($sql);
 
 if (1 == $lastlinks['lastlinksyn'] && $lastlinks['lastlinkstotal'] > 0) {
-    $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_links') . ' WHERE published > 0
+    $result = $xoopsDB->query(
+        'SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_links') . ' WHERE published > 0
                                 AND published <= ' . $time . '
                                 AND (expired = 0 OR expired > ' . $time . ')
                                 AND offline = 0
-                                ORDER BY published DESC', 0, 0);
+                                ORDER BY published DESC',
+        0,
+        0
+    );
     list($count) = $xoopsDB->fetchRow($result);
 
     $count = (($count > $lastlinks['lastlinkstotal'])

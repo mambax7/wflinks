@@ -15,8 +15,8 @@ require_once __DIR__ . '/header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$op      = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$lid     = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$op      = \Xmf\Request::getString('op', '');
+$lid     = \Xmf\Request::getInt('lid', 0);
 $lid     = (int)$lid;
 $buttonn = _MD_WFL_SUBMITBROKEN;
 $buttonn = mb_strtolower($buttonn);
@@ -27,7 +27,7 @@ switch (mb_strtolower($op)) {
 
         $sender = (is_object($xoopsUser) && null !== $xoopsUser) ? $xoopsUser->getVar('uid') : 0;
         $ip     = getenv('REMOTE_ADDR');
-        $title  = Wflinks\Utility::cleanRequestVars($_REQUEST, 'title', '');
+        $title  = \Xmf\Request::getString('title', '');
         $title  = $myts->addSlashes($title);
         $time   = time();
 

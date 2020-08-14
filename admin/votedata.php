@@ -16,9 +16,9 @@ require_once __DIR__ . '/admin_header.php';
 /** @var Wflinks\Helper $helper */
 $helper = Wflinks\Helper::getInstance();
 
-$op  = Wflinks\Utility::cleanRequestVars($_REQUEST, 'op', '');
-$rid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'rid', 0);
-$lid = Wflinks\Utility::cleanRequestVars($_REQUEST, 'lid', 0);
+$op  = \Xmf\Request::getString('op', '');
+$rid = \Xmf\Request::getInt('rid', 0);
+$lid = \Xmf\Request::getInt('lid', 0);
 
 switch (mb_strtolower($op)) {
     case 'delvote':
@@ -29,7 +29,7 @@ switch (mb_strtolower($op)) {
         break;
     case 'main':
     default:
-        $start = Wflinks\Utility::cleanRequestVars($_REQUEST, 'start', 0);
+        $start = \Xmf\Request::getInt('start', 0);
         xoops_cp_header();
 
         $_vote_data = Wflinks\Utility::getVoteDetails($lid);

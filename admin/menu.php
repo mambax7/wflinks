@@ -9,8 +9,7 @@
  */
 
 use Xmf\Module\Admin;
-use XoopsModules\Wflinks\{
-    Helper
+use XoopsModules\Wflinks\{Helper
 };
 
 /** @var Admin $adminObject */
