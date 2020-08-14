@@ -25,7 +25,7 @@ if (empty($fct)) {
 // if (isset($fct) && $fct == "users") {
 // $xoopsOption['pagetype'] = "user";
 // }
-require_once dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
+require_once dirname(__DIR__, 3) . '/mainfile.php';
 // include "../../mainfile.php"; GIJ
 require XOOPS_ROOT_PATH . '/include/cp_functions.php';
 
